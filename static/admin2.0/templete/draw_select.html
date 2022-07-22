@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../layui/css/layui.css"/>
+</head>
+<body>
+<table class="layui-table">
+    <thead>
+    <tr>
+        <th lay-data="{field:'username', width:80}">场地</th>
+        <th lay-data="{ width:80, sort: true}">抽签开放时间</th>
+        <th lay-data="{ width:80}">抽签结束时间</th>
+        <th lay-data="{field:'sex', width:80}">补选开放时间</th>
+        <th lay-data="{field:'city', width:80}">补选结束时间</th>
+        <th lay-data="{ width:80}">循环时间</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody class="save">
+
+    </tbody>
+</table>
+<div id="layerDemo" style="margin-bottom: 0;">
+
+  <div class="layui-btn-container">
+    <button  type="button" class="layui-btn layui-btn-normal" onclick="add_drawtime()">增加</button>
+  </div>
+</div>
+<div style="margin-bottom: 0;">
+</div>
+<script src="../layui/layui.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-1.11.0.min.js"></script>
+<script>
+    var List = []
+    $ = layui.jquery;
+    var token = window.localStorage.getItem('token')
+    var place_id = window.localStorage.getItem('place_id')
+    var user_id = window.localStorage.getItem('user_id')
+    $.ajax({
+        url: 'https://test.wyu-pesystem.com/admin/drawtime/select_port',
+        method: 'GET',
+        data: {
+            user_id: user_id,
+            place_id: place_id,
+            base: 'draw_start_time',
+            sort_order: 'desc'
+        },
+        headers: {token: token},
+        success: function (res) {
+            res = JSON.parse(res)
+            console.log(res)
+            List = res.data
+            add(List)
+        },
+    })
+
+    function add(option) {
+        var index = ``
+        option.forEach(item => (
+            index += `   <tr>
+        <td>${item.place.name}</td>
+        <td>${item.draw_start_time}</td>
+        <td>${item.draw_end_time}</td>
+        <td>${item.book_start_time}</td>
+        <td>${item.book_end_time}</td>
+        <td>${item.cycle_time}</td>
+        <th>
+        <td><button onclick="to_maketime('${item.id}')">进入时间制定</button></td>
+        <td><button onclick="del('${item.id}')">删除</button></td>
+        </th>
+         </tr>`
+        ))
+        $('.save').html(index)
+    }
+
+    function add_drawtime() {
+        layer.open({
+            type: 2,
+            content: 'draw_set.html',
+            area: ['600px', '600px']
+        })
+    }
+    function del(option) {
+        console.log(option)
+        $.ajax({
+            url: 'https://test.wyu-pesystem.com/admin/drawtime/delete_port',
+            method: 'GET',
+            data: {
+                drawtime_id: option,
+                user_id: user_id
+            },
+            headers: {token: token},
+            success: function (res) {
+                console.log(res)
+                window.location.href ='./draw_select.html'
+            },
+        })
+    }
+
+    function to_maketime(option) {
+        console.log(option)
+        window.localStorage.setItem('drawtime_id', option)
+        window.location.href = './timetable_select.html'
+    }
+</script>
+</body>
+</html>

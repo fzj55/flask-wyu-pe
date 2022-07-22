@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/admin2.0.iml" filepath="$PROJECT_DIR$/.idea/admin2.0.iml" />
+      <module fileurl="file://D:/学习/python/boke_1/.idea/boke_1.iml" filepath="D:/学习/python/boke_1/.idea/boke_1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../教学管理系统/教学管理-后端/.idea/flaskProject1.iml" filepath="$PROJECT_DIR$/../教学管理系统/教学管理-后端/.idea/flaskProject1.iml" />
+      <module fileurl="file://D:/学习/python/测试three/.idea/flaskProject3.iml" filepath="D:/学习/python/测试three/.idea/flaskProject3.iml" />
+    </modules>
+  </component>
+</project>

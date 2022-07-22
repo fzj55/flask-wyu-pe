@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <title>场馆管理系统</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+</head>
+<body>
+<div class="layui-body">
+    <div class="layui-form-item">
+        <label class="layui-form-label">文件</label>
+        <div class="layui-input-block">
+            <!-- src：应该等于学生的icon -->
+            <button type="button" class="layui-btn" id="upload">
+                <i class="layui-icon">&#xe67c;</i>上传
+            </button>
+            <button class="layui-btn" lay-filter="formDemo" id="commit">提交</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="../layui/layui.js"></script>
+<script src="../js/jquery-1.11.0.min.js"></script>
+<script>
+    var token = window.localStorage.getItem('token')
+    var user_id = window.localStorage.getItem('user_id')
+    $('#commit').click(function () {
+        console.log('111')
+    })
+    layui.use(['element', 'layer', 'util', 'laydate', 'upload'], function () {
+            var layer = layui.layer
+            var upload = layui.upload;
+
+            // 上传组件
+            var uploadInst = upload.render({
+                elem: '#upload'
+                , url: `https://test.wyu-pesystem.com/admin/user/batch_add_port` //改成您自己的上传接口
+                , size: 1024 * 50
+                , accept: 'file'
+                , multiple: false
+                , auto: false
+                , field: 'icon'
+                , bindAction: '#commit'
+                , before: function () {
+                    this.data = {
+                        token: token
+                        user_id: user_id
+                    }
+                }
+                , done: function (res) {
+                    console.log(res)
+                    layer.msg(res.msg)
+                },
+            })
+
+        }
+    )
+</script>

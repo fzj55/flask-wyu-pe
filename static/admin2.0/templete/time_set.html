@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+</head>
+<body>
+<form class="layui-form" action="" id="info">
+
+    <div class="layui-form-item" id="dis">
+        <label class="layui-form-label">场地</label>
+        <div class="layui-input-block">
+            <input class="1" type="checkbox" name="like[write]" title="1" value="3" checked>
+            <input class="1" type="checkbox" name="like[read]" title="2" value="4" checked>
+            <input class="1" type="checkbox" name="like[dai]" title="3" value="5" checked>
+            <input class="1" type="checkbox" name="like[write]" title="4" value="6" checked>
+            <input class="1" type="checkbox" name="like[read]" title="5" value="7" checked>
+            <input class="1" type="checkbox" name="like[dai]" title="6" value="8" checked>
+            <input class="1" type="checkbox" name="like[write]" title="7" value="9" checked>
+            <input class="1" type="checkbox" name="like[read]" title="8" value="10" checked>
+            <input class="1" type="checkbox" name="like[dai]" title="9" value="11" checked>
+            <input class="1" type="checkbox" name="like[write]" title="10" value="12" checked>
+            <input class="1" type="checkbox" name="like[read]" title="11" value="13" checked>
+            <input class="1" type="checkbox" name="like[dai]" title="12" value="14" checked>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">场地开放时间</label>
+        <div class="layui-input-inline">
+            <input type="text" class="layui-input" id="test5" name="start_time" placeholder="">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">场地结束时间</label>
+        <div class="layui-input-inline">
+            <input type="text" class="layui-input" id="test6" name="end_time" placeholder="">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">每个场地可容纳最大人数</label>
+        <div class="layui-input-inline">
+            <input type="text" name="ticket_num" required lay-verify="required" placeholder="100" autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">每人每次可预订数量</label>
+        <div class="layui-input-inline">
+            <input type="text" name="book_num" required lay-verify="required" placeholder="1" autocomplete="off"
+                   class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+        </div>
+    </div>
+</form>
+<script src="../layui/layui.js"></script>
+<script>
+    //Demo
+    var drawtime_id = window.localStorage.getItem('drawtime_id')
+    var token = window.localStorage.getItem('token')
+    var user_id = window.localStorage.getItem('user_id')
+    var place_id = window.localStorage.getItem('place_id')
+    layui.use('form', function () {
+        var form = layui.form;
+        var laydate = layui.laydate;
+        $ = layui.jquery;
+    if (place_id == '2'){
+            $('#dis').css('display', 'none')
+        }
+        //获取时间
+        laydate.render({
+            elem: '#test5'
+            , type: 'datetime'
+        });
+        laydate.render({
+            elem: '#test6'
+            , type: 'datetime'
+        });
+        laydate.render({
+            elem: '#test7'
+            , type: 'datetime'
+        });
+        laydate.render({
+            elem: '#test8'
+            , type: 'datetime'
+        });
+        $("form").on("click", function (event) {
+            //阻止默认行为
+            event.preventDefault();
+        })
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            if (place_id == '2'){
+            var arr_box = [2];
+        }
+            else{
+                var arr_box = [];
+            layui.$('input[class="1"]:checked').each(function () {
+                arr_box.push($(this).val())
+            });
+            }
+            $.ajax({
+                type: 'post',
+                url: `https://test.wyu-pesystem.com/admin/timetable/insert_port?user_id=${user_id}`,
+                headers: {
+                    token: token
+                },
+                data: {
+                    place_ids: arr_box,
+                    start_time: data.field.start_time,
+                    end_time: data.field.end_time,
+                    ticket_num: data.field.ticket_num,
+                    can_book_num: data.field.book_num,
+                    is_follow_cycle: 1,
+                    drawtime_id:drawtime_id
+                },
+                success: function (res) {
+                    console.log(res);
+                    res = JSON.parse(res)
+                    if (res.code !== 0) {
+                        layer.msg("添加失败 可能是信息错误", {
+                                time: 1500,
+                            },
+                            function () {
+                                //window.location.reload()
+                            })
+                    } else {
+                        layer.msg("添加成功", {
+                                time: 1500,
+                            },
+                            function () {
+                                window.location.reload()
+                            }
+                        )
+                    }
+                }
+            })
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+2022-04-19 17:56:50,467 - utils.log - INFO - 1-1
+2022-04-19 17:57:31,912 - utils.log - INFO - 1-1
+2022-04-19 18:29:43,235 - utils.log - INFO - 1-1
+2022-04-22 09:07:29,928 - utils.log - INFO - 3119004309 || 1 || 2 || 5f5ea709-8305-40f3-9bed-7157613e4ed4
+2022-04-22 09:09:49,563 - utils.log - INFO - 3119004309 || 1 || 0 || 5e01a4be-89a8-4489-a8a0-db06d0bb64a8
+2022-04-22 09:19:00,147 - utils.log - INFO - 这是test1
+2022-04-22 09:22:00,128 - utils.log - INFO - 这是test2
+2022-04-22 09:22:00,158 - utils.log - INFO - 这是test1
+2022-04-22 11:45:55,764 - utils.log - INFO - 3119002463 || 1 || 0 || 95264cfe-fe06-40cd-b5e9-9fc7aa251baa
+2022-04-22 11:51:58,676 - utils.log - INFO - 3119002463 || 1 || 0 || 5995a6f3-bcb9-40cf-87c6-cebc24a359f3
+2022-04-22 11:55:49,255 - utils.log - INFO - 3119004309 || 1 || 0 || 9cd85532-dfd9-4408-9e9f-032c262ff5b2
+2022-04-22 12:10:48,508 - utils.log - INFO - 3119002463 || 1 || 0 || 6ad2a090-1aed-4b8b-9a69-ac182a1d907e
+2022-04-22 12:15:14,291 - utils.log - INFO - 3119004309 || 1 || 0 || 91748d38-9367-42f0-b3fe-19dca5e0c942
+2022-04-22 12:19:00,612 - utils.log - INFO - 3119002463 || 1 || 0 || e7aff3e9-f242-4eca-a849-a59965985311
+2022-04-22 12:21:09,694 - utils.log - INFO - 3119004309 || 1 || 0 || 4a6a544b-ce34-4edc-8be7-0fc85a9f5c78
+2022-04-22 12:23:32,865 - utils.log - INFO - 3119002463 || 1 || 0 || 8b299ef1-8d13-43fd-9a7b-3ecd4e284fbf
+2022-04-22 20:00:49,790 - utils.log - INFO - 1 || 1 || c166748d-a9e2-442b-b369-bccad72f0d9e
+2022-04-23 09:40:21,800 - utils.log - INFO - 1 || 1 || 3 || 360f37ca-dc6f-43ab-ab39-e70997af3e2a
+2022-04-23 09:41:36,656 - utils.log - INFO - 1 || 1 || 3 || beda7b43-e6cd-4a69-a70d-61ca00e07d63
+2022-04-23 09:41:40,847 - utils.log - INFO - 1 || 1 || 2 || 73df2754-f2a4-4ae1-b1f9-fc38ba32cd87
+2022-04-23 22:18:27,023 - utils.log - INFO - 3119004309 || 1 || 0 || 02baffaa-d738-4ae5-ba8a-ba281a87bb91
+2022-04-23 22:22:44,683 - utils.log - INFO - 3119004309 || 1 || 0 || a2e015c5-530a-4446-8f6f-6fd18bb6369f
+2022-04-23 22:35:37,798 - utils.log - INFO - 3119004309 || 1 || 0 || 6d6d6d17-d9dc-40db-abfc-b4fa5417c320
+2022-04-30 20:47:35,828 - utils.log - INFO - 1 || cd214c68-ff48-419e-8c18-d07f5df5ffc3 || 6b9d0df9-25e5-48cf-ad24-900631dfc5ba
+2022-04-30 21:02:38,443 - utils.log - INFO - 1 || cd214c68-ff48-419e-8c18-d07f5df5ffc3 || 15279dd4-bf93-4572-ae01-3096b2846ace
+2022-04-30 21:07:46,217 - utils.log - INFO - 1 && cd214c68-ff48-419e-8c18-d07f5df5ffc3 && 7 && 0 && 4b711f7d-b4dc-4774-8223-10fc91d9033d
+2022-04-30 21:09:26,452 - utils.log - INFO - 1 && cd214c68-ff48-419e-8c18-d07f5df5ffc3 && 7 && 0 && 2d03cb07-6192-4903-95e5-953c3e9414e2
+2022-04-30 21:11:24,485 - utils.log - INFO - 1 || cd214c68-ff48-419e-8c18-d07f5df5ffc3 || 6e18082d-f0c6-4ad6-842b-5d88d8f49f84
+2022-04-30 21:19:08,161 - utils.log - INFO - 1 || 8271063e-8338-4039-b5de-abb592e00e2b || 4e5c502d-544f-4e07-9faf-854394618ba7
+2022-04-30 21:28:25,761 - utils.log - INFO - 2 && d15b64f3-fad3-4880-8150-07ed9b2eb240 && 6 && 0 && a6a97b95-79f6-4afa-aaa6-976ea65de078
+2022-04-30 21:42:47,497 - utils.log - INFO - 1 && 67efe76c-22ec-4896-a78b-bc4e2a2151c9 && 7 && 0 && 6a60b984-b171-4e0e-bd47-32f22cbdcaaf
+2022-04-30 21:43:24,978 - utils.log - INFO - 2 || 67efe76c-22ec-4896-a78b-bc4e2a2151c9 || e0e68300-b27d-4cec-ada2-8468f63b6260
+2022-04-30 21:46:00,062 - utils.log - ERROR - 循环时间设置失败
+2022-04-30 22:03:24,111 - utils.log - INFO - 1 || 8a7d45e1-2b6c-46b6-98ee-52cbbaa20860 || 7643da37-349a-4a95-9f81-98e6d26f8aa4
+2022-04-30 22:03:47,349 - utils.log - INFO - 2 || 8a7d45e1-2b6c-46b6-98ee-52cbbaa20860 || 70c568d6-2a5f-4335-bf37-dc65e6b7bea3
+2022-04-30 22:04:19,498 - utils.log - INFO - 2 || 8a7d45e1-2b6c-46b6-98ee-52cbbaa20860 || bda66378-1661-4e0f-881a-98fdb676caea
+2022-04-30 22:04:31,079 - utils.log - INFO - 2 || 8a7d45e1-2b6c-46b6-98ee-52cbbaa20860 || 156e6cbc-54a4-409c-a0d1-a7bb267a81f4
+2022-04-30 22:04:41,621 - utils.log - INFO - 2 || 8a7d45e1-2b6c-46b6-98ee-52cbbaa20860 || 656cf974-a0a0-4e80-95fc-bdea73b0981a
+2022-04-30 22:04:51,674 - utils.log - INFO - 2 || 8a7d45e1-2b6c-46b6-98ee-52cbbaa20860 || c20822b9-ecd8-414f-9e9e-89af3c7a82f4
+2022-04-30 22:06:00,017 - utils.log - INFO - success_draw:8a7d45e1-2b6c-46b6-98ee-52cbbaa20860
+2022-04-30 22:06:00,027 - utils.log - ERROR - 循环时间设置失败
+2022-04-30 22:15:00,472 - utils.log - INFO - 1 || aa51479d-c9f6-4673-89bb-e11e4038bcd2 || 0d7880fd-e943-4da4-8cb6-c0ceebecfa57
+2022-04-30 22:15:22,027 - utils.log - INFO - 2 || aa51479d-c9f6-4673-89bb-e11e4038bcd2 || d6ed407b-261d-40fe-be7d-0e299fcc02da
+2022-04-30 22:15:52,885 - utils.log - INFO - 2 || aa51479d-c9f6-4673-89bb-e11e4038bcd2 || 53c3c1ae-ec37-4bae-8458-1a67ee3bd29e
+2022-04-30 22:16:06,222 - utils.log - INFO - 2 || aa51479d-c9f6-4673-89bb-e11e4038bcd2 || 8ee2448e-3838-4e61-892c-28cb3464c35c
+2022-04-30 22:16:24,671 - utils.log - INFO - 2 && aa51479d-c9f6-4673-89bb-e11e4038bcd2 && 6 && 0 && c0e1aeea-5df9-4fa1-bc90-d28cc8a12ce2
+2022-04-30 22:16:58,645 - utils.log - INFO - 3119004309 || aa51479d-c9f6-4673-89bb-e11e4038bcd2 || e338eaf6-7549-4282-bb63-10e779b71080
+2022-04-30 23:54:21,711 - utils.log - INFO - 1 || a0cc650b-1cf0-4bd1-b84e-f132211f7ee7 || c2c4dff6-bdac-4db0-869c-921f67e50ad0
+2022-04-30 23:54:44,892 - utils.log - INFO - 2 && a0cc650b-1cf0-4bd1-b84e-f132211f7ee7 && 6 && 0 && 8311381f-cbf5-45e7-9590-16fa945e1056
+2022-04-30 23:59:00,036 - utils.log - ERROR - 循环时间设置失败
+2022-05-01 00:02:11,407 - utils.log - INFO - 1 && ab15a392-4355-4f1a-93e9-fb1ff8131543 && 7 && 0 && c8d076ff-15e1-4174-ac36-482462fa310e
+2022-05-01 00:02:40,891 - utils.log - INFO - 2 || ab15a392-4355-4f1a-93e9-fb1ff8131543 || dc4a43f7-06d0-4e15-a9df-cff2eaef189e
+2022-05-01 00:05:00,081 - utils.log - INFO - success_draw:ab15a392-4355-4f1a-93e9-fb1ff8131543
+2022-05-01 08:54:04,400 - utils.log - INFO - 1 || d4be7bf2-c780-41a3-a90f-983f267ded45 || fd5f6922-ff78-44de-ba92-4087c6d047b7
+2022-05-01 08:56:00,082 - utils.log - INFO - success_draw:d4be7bf2-c780-41a3-a90f-983f267ded45
+2022-05-01 09:03:00,082 - utils.log - INFO - success_draw:eb0a7edf-5df3-4bf1-a4e7-c70364f1d99b
+2022-05-02 12:12:55,477 - utils.log - INFO - 1 || 3aae1904-6cfc-4f4b-82ac-dd7f774d756f || 229dc881-536e-4a1e-a221-51b2536c51f1
+2022-05-02 12:14:07,539 - utils.log - INFO - success_draw:3aae1904-6cfc-4f4b-82ac-dd7f774d756f
+2022-05-02 12:14:09,002 - utils.log - INFO - success_draw:3aae1904-6cfc-4f4b-82ac-dd7f774d756f
+2022-05-02 12:21:03,973 - utils.log - INFO - 1 || 2aa5ca66-fa0d-4861-94a7-3382bbbd1b84 || 28b3490a-d773-4675-95d4-9f2e995ac8a6
+2022-05-02 12:23:05,265 - utils.log - INFO - success_draw:2aa5ca66-fa0d-4861-94a7-3382bbbd1b84
+2022-05-02 16:36:01,491 - utils.log - INFO - 1 || 3c200954-8ce8-4782-8e9b-f59dc87693f2 || cd28c154-3eba-4462-8b53-5480902016d5
+2022-05-02 16:38:11,350 - utils.log - INFO - success_draw:3c200954-8ce8-4782-8e9b-f59dc87693f2
+2022-05-02 16:51:14,100 - utils.log - INFO - 1 && 0cfbcf10-a23d-409e-87b4-7b2f025df4fb && 10 && 1 && 30c8e5ba-e96e-490f-9fa5-ce7372a94cb5
+2022-05-02 16:53:00,040 - utils.log - INFO - success_draw:0cfbcf10-a23d-409e-87b4-7b2f025df4fb
+2022-05-02 17:05:10,382 - utils.log - INFO - 1 && bd82388f-44a6-444e-9058-52c8a8ac07a0 && 10 && 1 && b7249763-9935-449f-b9dc-997dfb78aeb2
+2022-05-02 17:07:00,046 - utils.log - INFO - success_draw:bd82388f-44a6-444e-9058-52c8a8ac07a0
+2022-05-02 17:27:07,715 - utils.log - INFO - 1 && cb300859-0988-46e5-bbdb-b3774780c73f && 10 && 1 && 34bc3878-b750-4c84-910e-b850fdae6f4a
+2022-05-02 17:33:12,622 - utils.log - INFO - 1 || dd24f7f4-8764-47cc-a8c0-cac54720ddf9 || b715d79d-fa2a-48fe-8ea8-2310691a5abd
+2022-05-02 17:35:00,135 - utils.log - INFO - success_draw:dd24f7f4-8764-47cc-a8c0-cac54720ddf9
+2022-05-02 20:24:31,659 - utils.log - INFO - 1 || 979a8914-4b7c-4e80-8700-bd9faad765e0 || 407f8445-61da-4f63-a3c5-daef58a39c52
+2022-05-02 20:26:00,105 - utils.log - INFO - success_draw:979a8914-4b7c-4e80-8700-bd9faad765e0
+2022-05-02 20:31:01,865 - utils.log - INFO - 1 && 2a4d5abf-08b6-46fa-9860-dfb55a65c9f4 && 11 && 1 && 712ee2b7-04fb-4e0b-bae6-fbb16151ce3e
+2022-05-03 19:00:51,298 - utils.log - INFO - 1 || eea4aeb6-9e72-4d6f-a63a-fbcc0ac7b50e || b3d8e0b8-5226-4012-97e4-666df7828a15
+2022-05-03 19:02:00,065 - utils.log - INFO - success_draw:eea4aeb6-9e72-4d6f-a63a-fbcc0ac7b50e
+2022-05-03 19:11:12,078 - utils.log - INFO - 1 || 5afe2ab9-bfc7-4fde-8752-ba34b1ca75f2 || 024e35f0-8617-46f8-91be-ffc5eedf89e7
+2022-05-03 19:13:00,072 - utils.log - INFO - success_draw:5afe2ab9-bfc7-4fde-8752-ba34b1ca75f2
+2022-05-03 19:16:14,382 - utils.log - INFO - 1 || f5fc7129-a604-45c7-a6d5-5c017c7ad5f6 || 8370c8d3-6a18-460e-938d-1dea0d6f849b
+2022-05-03 19:18:00,077 - utils.log - INFO - success_draw:f5fc7129-a604-45c7-a6d5-5c017c7ad5f6
+2022-06-16 09:52:00,015 - utils.log - INFO - success_draw:0e406b9f-b84c-442c-9ea8-f55043e0b4d1
+2022-06-18 18:06:00,146 - utils.log - INFO - success_draw:7b37e902-2c9c-4469-ad9c-d1f21abd718b
+2022-06-18 18:10:09,621 - utils.log - INFO - 3119004309 && 1dd9db95-63ab-4093-abbe-4e79d9bc1300 && c201a109-c7b3-48e6-a17f-83f4624677bb && 1 && ca5b4a91-ff7d-4bde-bf0e-730955822e69
+2022-06-18 18:13:00,127 - utils.log - INFO - success_draw:1dd9db95-63ab-4093-abbe-4e79d9bc1300
+2022-06-19 17:36:31,685 - utils.log - INFO - 3119004309 && 431df54e-d7fb-4236-bc98-b50f769387ca && 87433059-5a69-4e78-b14c-f5fb2de2aefc && 1 && 4ad4045a-c69e-4f01-8fe0-469d7535633f
+2022-06-19 17:38:00,039 - utils.log - INFO - success_draw:431df54e-d7fb-4236-bc98-b50f769387ca
+2022-06-19 17:44:12,626 - utils.log - INFO - 3119004309 && 0732ff04-f18b-41b8-8db3-9313924d2daf && dfb2fb73-f0e4-4d1a-ad31-2b7171fc21d2 && 1 && 397d26a0-d468-46e3-b067-0ebf318c3835
+2022-06-19 17:46:00,152 - utils.log - INFO - success_draw:0732ff04-f18b-41b8-8db3-9313924d2daf
+2022-06-19 17:56:00,034 - utils.log - INFO - success_draw:576375e0-e323-483a-a003-61d88c65776e
+2022-06-19 17:59:37,499 - utils.log - INFO - 3119004309 && 5fea1643-855e-4243-a265-55349dacb555 && b37a9e82-aa70-48d2-87fb-070c69668922 && 3 && 922d3c20-3e99-42ce-919e-277c0bd18d71
+2022-06-19 18:01:00,064 - utils.log - INFO - success_draw:5fea1643-855e-4243-a265-55349dacb555

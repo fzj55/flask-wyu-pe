@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+</head>
+<body>
+<form class="layui-form" action="" id="info">
+    <div class="layui-form-item">
+        <label class="layui-form-label">循环</label>
+        <div class="layui-input-block">
+            <input class="2" type="checkbox" name="like[write]" title="周一" value="0" checked>
+            <input class="2" type="checkbox" name="like[read]" title="周二" value="1" checked>
+            <input class="2" type="checkbox" name="like[dai]" title="周三" value="2" checked>
+            <input class="2" type="checkbox" name="like[write]" title="周四" value="3" checked>
+            <input class="2" type="checkbox" name="like[read]" title="周五" value="4" checked>
+            <input class="2" type="checkbox" name="like[dai]" title="周六" value="5" checked>
+            <input class="2" type="checkbox" name="like[dai]" title="周日" value="6" checked>
+        </div>
+    </div>
+            <label class="layui-form-label">抽签开放时间</label>
+        <div class="layui-input-inline">
+            <input type="text" class="layui-input" id="test5" name="draw_start_time" placeholder="">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">抽签结束时间</label>
+        <div class="layui-input-inline">
+            <input type="text" class="layui-input" id="test6" name="draw_end_time" placeholder="">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">补选开放时间</label>
+        <div class="layui-input-inline">
+            <input type="text" class="layui-input" id="test7" name="book_start_time" placeholder="">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">补选结束时间</label>
+        <div class="layui-input-inline">
+            <input type="text" class="layui-input" id="test8" name="book_end_time" placeholder="">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+        </div>
+    </div>
+</form>
+<script src="../layui/layui.js"></script>
+<script>
+    //Demo
+    layui.use('form', function () {
+        var form = layui.form;
+        var laydate = layui.laydate;
+        $ = layui.jquery;
+
+        //获取时间
+        laydate.render({
+            elem: '#test5'
+            , type: 'datetime'
+        });
+        laydate.render({
+            elem: '#test6'
+            , type: 'datetime'
+        });
+        laydate.render({
+            elem: '#test7'
+            , type: 'datetime'
+        });
+        laydate.render({
+            elem: '#test8'
+            , type: 'datetime'
+        });
+        $("form").on("click", function (event) {
+            //阻止默认行为
+            event.preventDefault();
+        })
+        //监听提交
+        form.on('submit(formDemo)', function (data) {
+            var place_id = window.localStorage.getItem('place_id')
+            var arr_box_2 = []
+            var token = window.localStorage.getItem('token')
+            var user_id = window.localStorage.getItem('user_id')
+            console.log(user_id)
+            layui.$('input[class="1"]:checked').each(function () {
+                arr_box.push($(this).val())
+            });
+            layui.$('input[class="2"]:checked').each(function () {
+                arr_box_2.push($(this).val())
+            });
+            $.ajax({
+                type: 'post',
+                url: `https://test.wyu-pesystem.com/admin/drawtime/insert_port?user_id=${user_id}`,
+                headers: {
+                    token: token
+                },
+                data: {
+                    place_id : place_id,
+                    cycle_time: arr_box_2,
+                    book_start_time: data.field.book_start_time,
+                    book_end_time: data.field.book_end_time,
+                    draw_start_time: data.field.draw_start_time,
+                    draw_end_time: data.field.draw_end_time,
+                },
+                success: function (res) {
+                    console.log(res);
+                    // window.location.reload()
+                    res = JSON.parse(res)
+                    if (res.code !== 0) {
+                        layer.msg("添加失败 可能是信息错误", {
+                                time: 1500,
+                            },
+                            function () {
+                                window.location.reload()
+                            })
+                    } else {
+                        layer.msg("添加成功", {
+                                time: 1500,
+                            },
+                            function () {
+                                window.location.reload()
+                            }
+                        )
+                    }
+                }
+            })
+        });
+    });
+</script>
+</body>
+</html>

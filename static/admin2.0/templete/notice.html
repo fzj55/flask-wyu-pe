@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../layui/css/layui.css" media="all">
+</head>
+<body>
+<form class="layui-form" action="" id="info">
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">标题</label>
+        <div class="layui-input-block">
+            <textarea name="title" placeholder="请输入内容" class="layui-textarea"
+                      style="width: 300px; height: 100px"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">公告</label>
+        <div class="layui-input-block">
+            <textarea name="content" placeholder="请输入内容" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="formDemo">立即提交</button>
+        </div>
+    </div>
+</form>
+
+<script src="../layui/layui.js"></script>
+<script>
+    $ = layui.jquery;
+    var form = layui.form;
+    $("form").on("click", function (event) {
+        //阻止默认行为
+        event.preventDefault();
+    })
+    //监听提交
+    form.on('submit(formDemo)', function (data) {
+        var arr_box = [];
+        var token = window.localStorage.getItem('token')
+        var user_id = window.localStorage.getItem('user_id')
+        var place_id = window.localStorage.getItem('place_id')
+        $.ajax({
+            type: 'post',
+            url: `https://test.wyu-pesystem.com/admin/notice/announce_port?user_id=${user_id}`,
+            headers: {
+                token: token
+            },
+            data: {
+                place_id: place_id,
+                content: data.field.content,
+                title: data.field.title
+            },
+            success: function (res) {
+                res = JSON.parse(res)
+                if (res.code !== 0) {
+                    layer.msg("添加失败 可能是信息错误", {
+                            time: 1500,
+                        },
+                        function () {
+                            window.location.reload()
+
+                        })
+                } else {
+                    layer.msg("添加成功", {
+                            time: 1500,
+                        },
+                        function () {
+                            window.location.reload()
+                        }
+                    )
+                }
+            }
+        })
+    });
+</script>
+</body>
+</html>

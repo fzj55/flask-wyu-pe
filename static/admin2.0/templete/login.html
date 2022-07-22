@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>教务管理系统</title>
+    <link rel="stylesheet" type="text/css" href="../layui/css/layui.css"/>
+</head>
+<body>
+<div id="bg"></div>
+<div class="login-container">
+    <h1 style="text-align: center;margin-bottom: 20px;font-weight:bolder">场馆管理系统 · 登录</h1>
+    <form id="loginForm" class="layui-form" style="margin-top:25px">
+        <div class="layui-form-item">
+            <input style="background-color:transparent;border:1px;border-radius: 20px;" type="text" id="username"
+                   placeholder="请输入用户名" autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-form-item">
+            <input style="background-color:transparent;border:1px;border-radius: 20px;" type="password" id="password"
+                   placeholder="请输入密码" autocomplete="off" class="layui-input">
+        </div>
+        <div class="layui-form-item">
+            <input style="background-color:transparent;border:1px;border-radius: 20px;" class="form-control Vcode"
+                   type="text" id="Vcode" name="Vcode" placeholder="请输入验证码">
+            <img src="https://test.wyu-pesystem.com/ImgVcode_port" alt="">
+        </div>
+        <div class="layui-form-item">
+            <button id="login-button" type="button" class="layui-btn layui-btn-radius layui-btn-fluid" lay-submit
+                    lay-filter="login">登录
+            </button>
+        </div>
+    </form>
+</div>
+</body>
+<script src="../layui/layui.js"></script>
+<script src="../js/jquery-1.11.0.min.js" charset="utf-8"></script>
+
+<script>
+    $("form").on("click", function (event) {
+        //阻止默认行为
+        event.preventDefault();
+    })
+    layui.use(function () {
+        $('#login-button').click(function () {
+            $.ajax({
+                url: 'https://test.wyu-pesystem.com/login_port',
+                type: 'post',
+                data: {name: $('#username').val(), password: $('#password').val(), code: $('#Vcode').val()},
+                success: function (res) {
+                    res = JSON.parse(res)
+                    if (res.code == 0) {
+                        window.localStorage.setItem('token', res.data.token)
+                        window.localStorage.setItem('user_id', res.data.user_id)
+                        window.location.href = './index.html'
+                    }
+                    else{
+                        layer.msg('输入有误',{icon:0,time:1500},function(){
+                        window.location.href = './login.html'
+                    });
+                    }
+                }
+            })
+        })
+    })
+</script>
+
+
+<style>
+    .login-container {
+        border-radius: 20px;
+        box-shadow: rgba(100, 100, 111, 0.8) 0px 7px 29px 0px;
+        position: absolute;
+        width: 400px;
+        height: 300px;
+        top: 50%;
+        left: 50%;
+        padding: 20px;
+        margin-left: -200px;
+        margin-top: -175px;
+    }
+
+    #bg {
+    background: url(../aa.png) no-repeat; position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        min-width: 1000px;
+        z-index: -10;
+        zoom: 1;
+        background-color: #fff;
+        background-repeat: no-repeat;
+        background-size: cover;
+        -webkit-background-size: cover;
+        -o-background-size: cover;
+        background-position: center;
+    }
+</style>
+
+</html>

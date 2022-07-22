@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../layui/css/layui.css"/>
+</head>
+<body>
+<table class="layui-table">
+    <thead>
+    <tr>
+        <th lay-data="{field:'username', width:20}" style="width: 100px">标题</th>
+        <th lay-data="{ width:200, sort: true}" style="width: 1000px">内容</th>
+        <th>操作</th>
+    </tr>
+    </thead>
+    <tbody class="save">
+
+    </tbody>
+</table>
+<div id="layerDemo" style="margin-bottom: 0;">
+
+  <div class="layui-btn-container">
+    <button  type="button" class="layui-btn layui-btn-normal" onclick="add_notice()">增加</button>
+  </div>
+</div>
+<div style="margin-bottom: 0;">
+</div>
+<script src="../layui/layui.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-1.11.0.min.js"></script>
+<script>
+    var List = []
+    $ = layui.jquery;
+    var token = window.localStorage.getItem('token')
+    var place_id = window.localStorage.getItem('place_id')
+    var user_id = window.localStorage.getItem('user_id')
+    $.ajax({
+        url: 'https://test.wyu-pesystem.com/admin/notice/search_port',
+        method: 'GET',
+        data: {
+            user_id: user_id,
+            place_id: place_id,
+        },
+        headers: {token: token},
+        success: function (res) {
+            res = JSON.parse(res)
+            console.log(res)
+            List = res.data
+            add(List)
+        },
+    })
+
+    function add(option) {
+        var index = ``
+        option.forEach(item => (
+            index += `   <tr>
+        <td>${item.title}</td>
+        <td>${item.content}</td>
+        <th>
+        <td><button onclick="del('${item.id}')">删除</button></td>
+        </th>
+         </tr>`
+        ))
+        $('.save').html(index)
+    }
+
+    function add_notice() {
+        layer.open({
+            type: 2,
+            content: 'notice.html',
+            area: ['600px', '600px']
+        })
+    }
+    function del(option) {
+        console.log(option)
+        $.ajax({
+            url: 'https://test.wyu-pesystem.com/admin/notice/del_port',
+            method: 'GET',
+            data: {
+                notice_id: option,
+                user_id: user_id
+            },
+            headers: {token: token},
+            success: function (res) {
+                console.log(res)
+                window.location.href ='./notice_select.html'
+            },
+        })
+    }
+
+</script>
+</body>
+</html>
